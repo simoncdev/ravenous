@@ -1,6 +1,6 @@
-const clientId = ['LJqXtIopDYQ8NHrQo1vZeQ']
-const secret = ['4O6TbVdBlLpWMUS0obxQZ9nwh7eYFbww3a04hrl4duLrVyMboWXU3RLLkob9eqdw'];
-const accessToken = {};
+const clientId = 'LJqXtIopDYQ8NHrQo1vZeQ'
+const secret = '4O6TbVdBlLpWMUS0obxQZ9nwh7eYFbww3a04hrl4duLrVyMboWXU3RLLkob9eqdw';
+let accessToken = '';
 
 let Yelp = {
   getAccessToken(){
@@ -50,11 +50,11 @@ let Yelp = {
                     id: business.id,
                     imageSrc: business.image_url,
                     name: business.name,
-                    address: business.location.display_address,
+                    address: business.location.address1,
                     city: business.location.city,
                     state: business.location.state,
                     zipCode: business.location.zip_code,
-                    category: business.categories,
+                    category: business.categories[0].title,
                     rating: business.rating,
                     reviewCount: business.review_count
                   }
