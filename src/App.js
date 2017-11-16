@@ -25,8 +25,8 @@ class App extends Component {
         {
           businesses: businesses
         }
-      )
-    })
+      );
+    });
   }
 
   render() {
