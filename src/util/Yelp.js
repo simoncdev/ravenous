@@ -1,8 +1,8 @@
 const clientId = 'LJqXtIopDYQ8NHrQo1vZeQ'
 const secret = '4O6TbVdBlLpWMUS0obxQZ9nwh7eYFbww3a04hrl4duLrVyMboWXU3RLLkob9eqdw';
-let accessToken = '';
+let accessToken;
 
-let Yelp = {
+const Yelp = {
   getAccessToken(){
     if (accessToken){
       return new Promise(
@@ -35,8 +35,8 @@ let Yelp = {
             headers: {
               Authorization: `Bearer ${accessToken}`
             }
-          }
-        ).then(
+          });
+       }).then(
           response => {return response.json();}
         ).then(
           jsonResponse => {
@@ -56,14 +56,10 @@ let Yelp = {
                     rating: business.rating,
                     reviewCount: business.review_count
                   // }
-                })
-              );
+                }));
             }
-          }
-        );
+          });
       }
-    );
-  }
-};
+    };
 
 export default Yelp;
